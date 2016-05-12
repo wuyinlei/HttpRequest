@@ -28,11 +28,12 @@ public class ServletRequest3 extends HttpServlet {
 			throws ServletException, IOException {
 //		String encoding = request.getCharacterEncoding() ;
 //		System.out.println(encoding);
+	
 		
 		 //test1(request);
 		// test2(request);
 		// test3(request);
-		 test4(request);
+		 //test4(request);
 		// test5(request);
 		//test6(request);
 		//test7(request);
@@ -40,6 +41,8 @@ public class ServletRequest3 extends HttpServlet {
 
 	// 1.获取单个控件的值 eg:获取姓名
 	public void test1(HttpServletRequest request) {
+		//当表单中没有填写内容的时候，服务器端拿到的是""空字符串
+		//当表单中没有这个参数的id的时候，拿到的是null
 		String name = request.getParameter("username"); // 参数是控件的名字
 		System.out.println("姓名： " + name);
 	}
