@@ -7,19 +7,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class ServletRequest5
- * //如果在地址栏中写入中文参数的时候乱码问题
- */
-@WebServlet("/ServletRequest5")
-public class ServletRequest5 extends HttpServlet {
+import com.sun.xml.internal.bind.v2.runtime.Name;
 
+/**
+ * Servlet implementation class ServletRequest7
+ * 从请求当中拿取数据
+ */
+@WebServlet("/Request7")
+public class ServletRequest7 extends HttpServlet {
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String name = request.getParameter("username");
-		
-		name = new String(name.getBytes("ISO-8859-1"));
-		
+		String name = (String) request.getAttribute("name");
 		System.out.println(name);
+		
+		request.setAttribute("age", 100);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

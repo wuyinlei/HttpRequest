@@ -33,6 +33,8 @@ public class ServletRequest4 extends HttpServlet {
 		//当写中文的控件较多的时候，更改服务器端的编码，在改端口号(server.xml)的地方该字符
 		//URIEncoding = "utf-8"
 		
+		
+		
 		System.out.println(name);
 		
 		
